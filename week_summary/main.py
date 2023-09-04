@@ -1,14 +1,15 @@
 from AveCalculator import AveCalculator
 
 def main():
-  q = "a"
-  while q != 'q':
+  while True:
     try:
-      data = input('Enter your data: ')
-      calculator = AveCalculator(data)
-      calculator.print_average()
-      q = input('press q to exit, any other key to continue: ')
-      print()
+      data = input('Enter your data ("q" to quit): ')
+      if data == "q":
+          break
+      else:
+          calculator = AveCalculator(data)
+          calculator.print_average()
+          print()
     except ValueError:
       print('Error! Please enter a valid number.\n')
 
